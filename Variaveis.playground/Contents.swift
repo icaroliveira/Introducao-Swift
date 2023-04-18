@@ -1,5 +1,9 @@
 import UIKit
 
 var greeting = "Hello, playground"
-var nome = "Icaro"
-var idade = 22
+var nome: String = "Icaro"
+var sobrenome: String = "rangel"
+var idade: Int = 22
+var sla: Int = 1223
+var adulto: Bool = true
+var number: Double = 5.5
