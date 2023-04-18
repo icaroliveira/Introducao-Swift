@@ -58,3 +58,37 @@ name.first //Taylor
  */
 
 //MARK: - Arrays vs Sets vs Tuples
+/*
+ Arrays, Sets e tuplas podem parecer semelhantes no início, mas têm usos distintos. Para ajudá-lo a saber qual usar, aqui estão algumas regras.
+ Se você precisar de uma coleção específica e fixa de valores relacionados, onde cada item tenha uma posição ou nome preciso, você deve usar uma tupla:
+ */
+let address = (house: 555, street: "Taylor Swift Avenue", city: "Nashville")
+/*
+ Se você precisa de uma coleção de valores que devem ser únicos ou precisa ser capaz de verificar se um item específico está lá extremamente rapidamente, você deve usar um Set:
+ */
+let set = Set(["aardvark", "astronaut", "azalea"])
+/*
+ Se você precisa de uma coleção de valores que podem conter duplicatas, ou a ordem de seus itens importa, você deve usar um Array:
+ */
+let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
+//Os Arrays são de longe as mais comuns dos três tipos.
+
+//MARK: - Dictionaries
+
+/*
+ Os Dictionaries são coleções de valores como Arrays, mas em vez de armazenar coisas com uma posição inteira, você pode acessá-los usando o que quiser.
+
+ A maneira mais comum de armazenar dados do dictionarie é usando strings. Por exemplo, poderíamos criar um dicionário que armazena a altura dos cantores usando seu nome:
+ */
+let heights = [
+    "Taylor Swift": 1.78,
+    "Ed Sheeran": 1.73
+]
+/*
+ Assim como as Arrays, os dictionaries começam e terminam com colchetes e cada item é separado com uma vírgula. No entanto, também usamos dois pontos para separar o valor que você deseja armazenar (ex. 1.78) do identificador em que você deseja armazená-lo (ex. “Taylor Swift”).
+ Esses identificadores são chamados de chaves, e você pode usá-los para ler dados de volta do dictionary:
+ */
+heights["Taylor Swift"] // 1.78
+/* OBS:
+ Ao usar anotações de tipo, os dictionaries são escritos entre parênteses com dois pontos entre seus tipos de identificador e valor. Por exemplo, [String: Double] e [String: String].
+ */
