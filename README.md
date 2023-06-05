@@ -14,3 +14,4 @@ Exemplos e exercícios básicos
 - Arrays vs Sets vs Tuples<br>
 - Dictionaries<br>
 # Operadores e Condições
+Em andamento...
