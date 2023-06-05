@@ -8,4 +8,9 @@ Exemplos e exercícios básicos
 - Booleans<br>
 - Interpolação<br>
 # Tipos Complexos
+- Arrays <br>
+- Sets<br>
+- Tuples<br>
+- Arrays vs Sets vs Tuples<br>
+- Dictionaries<br>
 # Operadores e COndições
