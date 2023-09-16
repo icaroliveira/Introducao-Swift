@@ -13,5 +13,4 @@ Exemplos e exercícios básicos
 - Arrays vs Sets vs Tuples<br>
 - Dictionaries<br>
 # Tipos Complexos
-# Operadores e Condições
-Em andamento...
+
