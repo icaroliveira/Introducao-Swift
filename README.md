@@ -7,11 +7,11 @@ Exemplos e exercícios básicos
 - Doubles<br>
 - Booleans<br>
 - Interpolação<br>
-# Tipos Complexos
 - Arrays <br>
 - Sets<br>
 - Tuples<br>
 - Arrays vs Sets vs Tuples<br>
 - Dictionaries<br>
+# Tipos Complexos
 # Operadores e Condições
 Em andamento...
