@@ -1,15 +1,16 @@
 import UIKit
-//Variaveis e tipos de variaveis
+//MARK: - Variaveis e tipos de variaveis
 /*
  Variáveis têm esse nome porque seus valores podem mudar ao longo do tempo, e isso geralmente é útil.
  Com a palavra chave "var" voce pode criar variaveis, por exemplo:
  */
-//String
+
+//MARK: - String
 var str = "Hello, World"
 var nome = "Fulano"
 var cidade = "Manaus"
 
-//String de varias linhas
+//MARK: - String de varias linhas
 /*
  As strings começam e terminam com aspas duplas, mas se você quiser que elas passem por várias linhas, você deve usar três conjuntos de aspas duplas.
  */
@@ -22,25 +23,26 @@ moro em Manaus
 /*
  Os Int possuem números inteiros, os Doubles possuem números fracionários e os booleanos são verdadeiros ou falsos.
  */
-//Int
+
+//MARK: - Int
 var idade = 22
 var populacao = 8_000_000
 
-//Doubles
+//MARK: - Doubles
 var pi = 3.141
 var altura = 1.77
 
-//Booleans
+//MARK: - Booleans
 var incrivel = true
 var chato = false
 /*
  A interpolação de strings permite que você crie strings a partir de outras variáveis e constantes, colocando seus valores dentro de sua string.
  */
-//Interpolação de strings
+//MARK: - Interpolação de strings
 var score = 85
 var resultado = "Seu score é \(score)" //Seu score é 85
 
-//Constantes
+//MARK: - Constantes
 /*
  Eu já disse que as variáveis têm esse nome porque seus valores podem mudar ao longo do tempo, e isso geralmente é útil. No entanto, muitas vezes você quer definir um valor uma vez e nunca alterá-lo, e então temos uma alternativa à palavra-chave var chamada let.
  A palavra-chave let cria constantes, que são valores que podem ser definidos uma vez e nunca mais. Por exemplo:
@@ -95,13 +97,13 @@ let colors2 = Set(["red", "green", "blue", "red", "blue"])
 //MARK: - Tuples
 /*
  As tuplas permitem que você armazene vários valores juntos em um único valor. Isso pode soar como matrizes, mas as tuplas são diferentes:
-
+ 
  Você não pode adicionar ou remover itens de uma tupla; eles são fixos em tamanho.
-
+ 
  Você não pode alterar o tipo de itens em uma tupla; eles sempre têm os mesmos tipos com os quais foram criados.
-
+ 
  Você pode acessar itens em uma tupla usando posições numéricas ou nomeando-os, mas o Swift não permitirá que você leia números ou nomes que não existem.
-
+ 
  As tuplas são criadas colocando vários itens entre parênteses, assim:
  */
 var name = (first: "Taylor", last: "Swift")
@@ -134,7 +136,7 @@ let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
 
 /*
  Os Dictionaries são coleções de valores como Arrays, mas em vez de armazenar coisas com uma posição inteira, você pode acessá-los usando o que quiser.
-
+ 
  A maneira mais comum de armazenar dados do dictionarie é usando strings. Por exemplo, poderíamos criar um dicionário que armazena a altura dos cantores usando seu nome:
  */
 let heights = [
