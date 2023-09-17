@@ -138,15 +138,18 @@ let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
  Os Dictionaries são coleções de valores como Arrays, mas em vez de armazenar coisas com uma posição inteira, você pode acessá-los usando o que quiser.
  A maneira mais comum de armazenar dados do dictionarie é usando strings. Por exemplo, poderíamos criar um dicionário que armazena a altura dos cantores usando seu nome:
  */
-let heights = [
+let Altura = [
     "Taylor Swift": 1.78,
     "Ed Sheeran": 1.73
 ]
 /*
- Assim como as Arrays, os dictionaries começam e terminam com colchetes e cada item é separado com uma vírgula. No entanto, também usamos dois pontos para separar o valor que você deseja armazenar (ex. 1.78) do identificador em que você deseja armazená-lo (ex. “Taylor Swift”).
+ Assim como as Arrays, os dictionaries começam e terminam com colchetes e cada item é separado com uma vírgula.
+ No entanto, também usamos dois pontos para separar o valor que você deseja armazenar (ex. 1.78) do identificador
+ em que você deseja armazená-lo (ex. “Taylor Swift”).
  Esses identificadores são chamados de chaves, e você pode usá-los para ler dados de volta do dictionary:
  */
-heights["Taylor Swift"] // 1.78
+
+Altura["Taylor Swift"] // 1.78
 /* OBS:
  Ao usar anotações de tipo, os dictionaries são escritos entre parênteses com dois pontos entre seus tipos de identificador e valor.
  Por exemplo,
@@ -154,23 +157,74 @@ heights["Taylor Swift"] // 1.78
  [String: String].
  */
 
-//MARK: - Por que o Swift tem dicionários e matrizes?
+//MARK: - Por que o Swift tem Dictionary e Arrays?
 
 /*
- Dicionários e matrizes são ambas maneiras de armazenar muitos dados em uma variável,
- mas eles os armazenam de maneiras diferentes: os dicionários nos permitem escolher uma “chave”
- que identifica o item que queremos adicionar, enquanto as matrizes apenas adicionam cada item sequencialmente.
- */
+ Dictionaries e Arrays são ambas maneiras de armazenar muitos dados em uma variável,
+ mas eles os armazenam de maneiras diferentes: os Dictionaries nos permitem escolher uma “chave”
+ que identifica o item que queremos adicionar, enquanto os Arrays apenas adicionam cada item sequencialmente.
+*/
 
 /*
-Então, em vez de tentar lembrar que o índice de matriz 7 significa o país de um usuário,
+Então, em vez de tentar lembrar que o índice de array 7 significa o país de um usuário,
 poderíamos simplesmente escrever o usuário["país"] - é muito mais conveniente.
  
 Os dicionários não armazenam nossos itens usando um índice, mas, em vez disso, otimizam a maneira como armazenam itens para recuperação rápida.
-Então, quando dizemos usuário["país"], ele enviará de volta o item nessa chave (ou nulo) instantaneamente, mesmo que tenhamos um dicionário
+Então, quando dizemos usuário["país"], ele enviará de volta o item nessa chave (ou nulo) instantaneamente, mesmo que tenhamos um Dictionary
 com 100.000 itens dentro.
 
-Lembre-se, não é possível garantir que exista uma chave em um dicionário. É por isso que ler um valor de um dicionário
- pode não enviar nada de volta - você pode ter solicitado uma chave que não existe!
+Lembre-se, não é possível garantir que exista uma chave em um Dictionarie. É por isso que ler um valor de um Dictionary
+pode não enviar nada de volta - você pode ter solicitado uma chave que não existe!
 */
 
+//MARK: - Dictionary default values
+/*
+Se você tentar ler um valor de um dicionário usando uma chave que não existe, o Swift o enviará de volta nulo - nada.
+Embora isso possa ser o que você deseja, há uma alternativa: podemos fornecer ao dicionário um valor padrão para usar
+se solicitarmos uma chave ausente.
+Para demonstrar isso, vamos criar um dicionário de sorvetes favoritos para duas pessoas:
+*/
+let favoriteIceCream = [
+    "Paul": "Chocolate",
+    "Sophie": "Vanilla"
+]
+
+//Podemos ler o sorvete favorito do Paul assim:
+favoriteIceCream["Paul"] //Chocolate
+
+//Mas se tentássemos ler o sorvete favorito para Charlotte, voltaríamos nulo, o que significa que Swift não tem valor para essa chave:
+favoriteIceCream["Charlotte"] //nill
+
+/*
+ Podemos corrigir isso dando ao Dictionary um valor padrão de “Desconhecido”, para que,
+ quando nenhum sorvete for encontrado para Charlotte, voltemos “Desconhecido” em vez de nulo:
+ */
+
+favoriteIceCream["Charlotte", default: "Desconhecido"] //Desconhecido
+
+//MARK: - Por que o Swift tem valores padrão para dictionaries?
+/*
+ Sempre que você lê um valor de um Dictionary, você pode obter um valor de volta ou pode voltar nulo - pode não haver valor para essa chave.
+ Não ter valor pode causar problemas no seu código, até porque você precisa adicionar funcionalidade extra para lidar com valores ausentes com
+ segurança, e é aí que entram os valores padrão do Dictionary: eles permitem que você forneça um valor de backup para usar quando a chave que
+ você pede não existe.
+ */
+//Por exemplo, aqui está um Dictionary que armazena os resultados do exame para um aluno:
+let results = [
+    "english": 100,
+    "french": 85,
+    "geography": 75
+]
+/*
+ Como você pode ver, eles fizeram três exames e pontuaram 100%, 85% e 75% para Inglês, Francês e Geografia.
+ Se quiséssemos ler a pontuação da história deles, como fazemos isso depende do que queremos:
+ 
+ 1 - Se um valor ausente significa que o aluno não conseguiu fazer o teste, então poderíamos usar um valor
+ padrão de 0 para que sempre obtenhamos um inteiro de volta.
+
+ 2 - Se um valor ausente significa que o aluno ainda não fez o exame, então devemos pular o valor padrão e,
+ em vez disso, procurar um valor nulo.
+ 
+ Então, não é como se você sempre precisasse de um valor padrão ao trabalhar com dicionários, mas quando você faz isso é fácil:
+*/
+let historyResult = results["history", default: 0] //0
