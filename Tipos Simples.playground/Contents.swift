@@ -136,7 +136,6 @@ let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
 
 /*
  Os Dictionaries são coleções de valores como Arrays, mas em vez de armazenar coisas com uma posição inteira, você pode acessá-los usando o que quiser.
- 
  A maneira mais comum de armazenar dados do dictionarie é usando strings. Por exemplo, poderíamos criar um dicionário que armazena a altura dos cantores usando seu nome:
  */
 let heights = [
@@ -149,5 +148,29 @@ let heights = [
  */
 heights["Taylor Swift"] // 1.78
 /* OBS:
- Ao usar anotações de tipo, os dictionaries são escritos entre parênteses com dois pontos entre seus tipos de identificador e valor. Por exemplo, [String: Double] e [String: String].
+ Ao usar anotações de tipo, os dictionaries são escritos entre parênteses com dois pontos entre seus tipos de identificador e valor.
+ Por exemplo,
+ [String: Double] e
+ [String: String].
  */
+
+//MARK: - Por que o Swift tem dicionários e matrizes?
+
+/*
+ Dicionários e matrizes são ambas maneiras de armazenar muitos dados em uma variável,
+ mas eles os armazenam de maneiras diferentes: os dicionários nos permitem escolher uma “chave”
+ que identifica o item que queremos adicionar, enquanto as matrizes apenas adicionam cada item sequencialmente.
+ */
+
+/*
+Então, em vez de tentar lembrar que o índice de matriz 7 significa o país de um usuário,
+poderíamos simplesmente escrever o usuário["país"] - é muito mais conveniente.
+ 
+Os dicionários não armazenam nossos itens usando um índice, mas, em vez disso, otimizam a maneira como armazenam itens para recuperação rápida.
+Então, quando dizemos usuário["país"], ele enviará de volta o item nessa chave (ou nulo) instantaneamente, mesmo que tenhamos um dicionário
+com 100.000 itens dentro.
+
+Lembre-se, não é possível garantir que exista uma chave em um dicionário. É por isso que ler um valor de um dicionário
+ pode não enviar nada de volta - você pode ter solicitado uma chave que não existe!
+*/
+
