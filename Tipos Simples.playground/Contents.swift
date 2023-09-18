@@ -228,3 +228,91 @@ let results = [
  Então, não é como se você sempre precisasse de um valor padrão ao trabalhar com dicionários, mas quando você faz isso é fácil:
 */
 let historyResult = results["history", default: 0] //0
+
+
+//MARK: - Creating empty collections
+
+/*
+ Arrays, Sets e dictionaries são chamados de coleções, porque eles coletam valores juntos em um só lugar.
+ Se você quiser criar uma coleção vazia, basta escrever seu tipo seguido de parênteses de abertura e fechamento.
+ Por exemplo, podemos criar um dicionário vazio com strings para chaves e valores como este:
+ */
+var teams = [String: String]()
+//Podemos então adicionar entradas mais tarde, assim:
+teams["Paul"] = "Red"
+//Da mesma forma, você pode criar uma matriz vazia para armazenar inteiros como este:
+var Results = [Int]()
+//A exceção é criar um conjunto vazio, o que é feito de forma diferente:
+var words = Set<String>()
+var numbers = Set<Int>()
+/*
+ Isso ocorre porque o Swift tem sintaxe especial apenas para Dictionaries e Arrays;
+ outros tipos devem usar sintaxe de colchetes de ângulo, como conjuntos.
+ Se você quisesse, poderia criar matrizes e dicionários com sintaxe semelhante:
+ */
+var scores = Dictionary<String, Int>()
+var REsults = Array<Int>()
+
+//MARK: - Por que você iria querer criar uma coleção vazia?
+
+//Quando você está apenas aprendendo Swift, é comum ver exemplos como este:
+let names = ["Eleanor", "Chidi", "Tahani", "Jianyu", "Michael", "Janet"]
+/*
+ Esse é um Array constante de seis strings e, como é constante, significa que não podemos adicionar mais
+ coisas à matriz - conhecemos todos os nossos itens quando a matriz é criada, então o resto do nosso programa
+ está apenas usando esses dados fixos.
+ Mas às vezes você não conhece todos os seus dados antecipadamente e, nesses casos, é mais comum criar uma coleção
+ vazia e depois adicionar coisas à medida que calcula seus dados.
+ 
+ Por exemplo, temos nosso Array de nomes fixos acima, e se quiséssemos descobrir quais nomes começaram com J, então:
+  1 - Criando uma matriz de strings vazia chamada algo como jNames
+  2 - Revie todos os nomes na matriz de nomes originais e verifique se ele começa com “J”
+  3 - Se isso acontecer, adicione-o no Array jNames.
+ 
+ Quando tivermos repassado todos os nomes, acabaremos com duas cordas em jNames: Jianyu e Janet. Claro, se nosso cheque
+ fosse quais nomes começavam com "X", então acabaríamos sem nomes no array - e tudo bem. Começou como vazio e terminou
+ como vazio.
+ */
+
+//MARK: - Enumerations
+
+/*
+ As Enumerations - geralmente chamadas apenas de enums - são uma maneira de definir grupos de valores relacionados
+ de uma maneira que os torna mais fáceis de usar.
+ Por exemplo, se você quisesse escrever algum código para representar o sucesso ou o fracasso de algum trabalho que
+ estava fazendo, você poderia representá-lo como strings:
+ */
+let RESult = "failure"
+//Mas o que acontece se alguém acidentalmente usar um nome diferente?
+let result2 = "failed"
+let result3 = "fail"
+//Todas essas três são Strings diferentes, então elas significam coisas diferentes.
+//Com enums, podemos definir um tipo de Resultado que pode ser sucesso ou fracasso, assim:
+
+enum Result {
+    case success
+    case failure
+}
+//E agora, quando o usamos, devemos escolher um desses dois valores:
+let result4 = Result.failure
+//Isso impede que você use acidentalmente Strings diferentes a cada vez.
+
+//MARK: - Por que Swift precisa de enums?
+
+/*
+ Enums são um recurso extraordinariamente poderoso do Swift, e você os verá usados de muitas maneiras e lugares.
+ Muitas linguagens não têm enums e se dão bem, então você pode se perguntar por que Swift precisa de enums!
+ 
+ Bem, no seu mais simples enum é simplesmente um bom nome para um valor. Podemos fazer um enum chamada Direção
+ com casos para norte, sul, leste e oeste, e nos referir àqueles em nosso código. Claro, poderíamos ter usado um
+ inteiro em vez disso, caso em que nos referimos a 1, 2, 3 e 4, mas você poderia realmente se lembrar do que 3 significava?
+ E se você digitasse 5 por engano?
+ 
+ Então, enums são uma maneira de dizermos Direction.north para significar algo específico e seguro. Se tivéssemos escrito
+ Direction.thatWay e tal caso não existisse, Swift simplesmente se recusaria a construir nosso código - ele não entende o caso enum.
+ Nos bastidores, o Swift pode armazenar seus valores de enum de forma muito simples, então eles são muito mais rápidos de criar e
+ armazenar do que algo como uma string.
+
+ À medida que você progride, você aprenderá como o Swift nos permite adicionar mais funcionalidade às enums - elas são mais
+ poderosas em Swift do que em qualquer outra linguagem que eu tenha visto.
+ */
