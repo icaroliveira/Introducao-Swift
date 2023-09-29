@@ -1,4 +1,6 @@
 import UIKit
+
+//MARK: - Tipos Simples
 //MARK: - Variaveis e tipos de variaveis
 /*
  Variáveis têm esse nome porque seus valores podem mudar ao longo do tempo, e isso geralmente é útil.
@@ -58,6 +60,20 @@ let year: Int = 1989
 let height: Double = 1.78
 let taylorRocks: Bool = true
 
+//MARK: - Resumo 1
+
+/*
+ 1. Você faz variáveis usando var e constantes usando let. É preferível usar constantes com a maior frequência possível.
+ 2. As strings começam e terminam com aspas duplas, mas se você quiser que elas passem por várias linhas, você deve usar
+ três conjuntos de aspas duplas.
+ 3. Os inteiros possuem números inteiros, os duplos possuem números fracionários e os booleanos possuem verdadeiro ou falso.
+ 4. A interpolação de string permite que você crie strings a partir de outras variáveis e constantes, colocando seus valores
+ dentro de sua string.
+ 5. O Swift usa inferência de tipo para atribuir a cada variável ou constante um tipo, mas você pode fornecer tipos
+ explícitos, se quiser.
+ */
+
+//MARK: - Tipos Complexos
 
 //MARK: - Arrays
 /*
@@ -312,7 +328,21 @@ let result4 = Result.failure
  Direction.thatWay e tal caso não existisse, Swift simplesmente se recusaria a construir nosso código - ele não entende o caso enum.
  Nos bastidores, o Swift pode armazenar seus valores de enum de forma muito simples, então eles são muito mais rápidos de criar e
  armazenar do que algo como uma string.
-
+ 
  À medida que você progride, você aprenderá como o Swift nos permite adicionar mais funcionalidade às enums - elas são mais
  poderosas em Swift do que em qualquer outra linguagem que eu tenha visto.
+ */
+
+//MARK: - Resumo 2
+/*
+ 1. Arrays, sets, tuples, e dictionaries permite que você armazene um grupo de itens sob um único valor.
+ Cada um deles faz isso de maneiras diferentes, então o que você usa depende do comportamento que você deseja.
+ 2. Arrays armazenam itens na ordem em que você os adiciona e você os acessa usando posições numéricas.
+ 3. Sets armazene itens sem nenhum pedido, para que você não possa acessá-los usando posições numéricas.
+ 4. Tuples são fixos em tamanho, e você pode anexar nomes a cada um de seus itens. Você pode ler itens usando
+ posições numéricas ou usando seus nomes.
+ 5. Dictionaries armazene itens de acordo com uma key, e você pode ler itens usando essas keys.
+ 6. Enums são uma maneira de agrupar valores relacionados para que você possa usá-los sem erros ortográficos.
+ 7. Você pode anexar valores brutos a enums para que eles possam ser criados a partir de inteiros ou strings,
+ ou você pode adicionar valores associados para armazenar informações adicionais sobre cada caso.
  */
