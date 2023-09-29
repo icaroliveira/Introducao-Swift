@@ -346,3 +346,36 @@ let result4 = Result.failure
  7. Você pode anexar valores brutos a enums para que eles possam ser criados a partir de inteiros ou strings,
  ou você pode adicionar valores associados para armazenar informações adicionais sobre cada caso.
  */
+
+
+//MARK: - Operadores e condições
+
+//MARK: - Operadores aritméticos
+/*
+ Agora que você conhece todos os tipos básicos no Swift, podemos começar a juntá-los usando operadores.
+ Operadores são aqueles pequenos símbolos matemáticos como + e -, e Swift tem uma enorme variedade deles.
+ Aqui estão algumas variáveis de teste para trabalharmos:
+ */
+
+let firstScore = 12
+let secondScore = 4
+
+//Podemos adicionar e subtrair usando + e -:
+
+let total = firstScore + secondScore
+let difference = firstScore - secondScore
+
+//E podemos multiplicar e dividir usando * e /:
+
+let product = firstScore * secondScore
+let divided = firstScore / secondScore
+/*
+ Swift tem um operador especial para calcular remanescentes após a divisão: %.
+ Ele calcula quantas vezes um número pode caber dentro de outro e, em seguida, envia de
+ volta o valor que sobrou.
+ 
+ Por exemplo, definimos o secondScore para 4, então, se dissermos 13% de secondScore, receberemos
+ de volta um, porque 4 se encaixa em 13 três vezes com o restante um:
+*/
+
+let remainder = 13 % secondScore
